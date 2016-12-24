@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ri-H1-WDm">
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game of Life" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wr9-KF-Jhg">
+                                        <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="wr9-KF-Jhg" firstAttribute="centerY" secondItem="6Ri-H1-WDm" secondAttribute="centerY" id="47F-Br-7Wa"/>
+                                    <constraint firstItem="wr9-KF-Jhg" firstAttribute="centerX" secondItem="6Ri-H1-WDm" secondAttribute="centerX" id="4al-N6-jiN"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9cz-Du-6LL" customClass="GOLGrid">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="9cz-Du-6LL" secondAttribute="height" multiplier="1:1" id="81n-Cd-8Xg"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KgZ-lq-FaR">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBJ-Ma-cjw">
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="tCr-jO-z58"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="20"/>
+                                        <state key="normal" title="Reset">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layerCornerRadius">
+                                                <real key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="layerBorderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layerBorderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="resetGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="X8C-f0-GVy"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WrX-fg-wvv">
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="z3n-RM-ZMb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="20"/>
+                                        <state key="normal" title="Start">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layerCornerRadius">
+                                                <real key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="layerBorderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layerBorderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="startButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="caO-Bp-Wmv"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="tBJ-Ma-cjw" firstAttribute="centerX" secondItem="KgZ-lq-FaR" secondAttribute="centerX" multiplier="3:2" id="JQc-TK-fUK"/>
+                                    <constraint firstItem="WrX-fg-wvv" firstAttribute="width" secondItem="KgZ-lq-FaR" secondAttribute="width" multiplier="1:3" id="Ymu-QZ-UZH"/>
+                                    <constraint firstItem="WrX-fg-wvv" firstAttribute="centerX" secondItem="KgZ-lq-FaR" secondAttribute="centerX" multiplier="1:2" id="eBz-8S-w1h"/>
+                                    <constraint firstItem="WrX-fg-wvv" firstAttribute="centerY" secondItem="KgZ-lq-FaR" secondAttribute="centerY" id="gSW-Xn-7e8"/>
+                                    <constraint firstItem="tBJ-Ma-cjw" firstAttribute="width" secondItem="KgZ-lq-FaR" secondAttribute="width" multiplier="1:3" id="hRU-xI-G8c"/>
+                                    <constraint firstItem="tBJ-Ma-cjw" firstAttribute="centerY" secondItem="KgZ-lq-FaR" secondAttribute="centerY" id="vDL-1v-uFh"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.56862745098039214" green="0.56862745098039214" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="9cz-Du-6LL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7zF-fj-Hbq"/>
+                            <constraint firstItem="6Ri-H1-WDm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DMJ-cn-hnC"/>
+                            <constraint firstAttribute="trailing" secondItem="KgZ-lq-FaR" secondAttribute="trailing" id="DZE-8c-2oQ"/>
+                            <constraint firstItem="9cz-Du-6LL" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="OFz-KI-40N"/>
+                            <constraint firstItem="9cz-Du-6LL" firstAttribute="top" secondItem="6Ri-H1-WDm" secondAttribute="bottom" id="Pf5-cQ-yyd"/>
+                            <constraint firstItem="9cz-Du-6LL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Q5f-9b-7jc"/>
+                            <constraint firstItem="KgZ-lq-FaR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="bkJ-t3-1Lb"/>
+                            <constraint firstItem="KgZ-lq-FaR" firstAttribute="top" secondItem="9cz-Du-6LL" secondAttribute="bottom" id="jhF-4C-qDy"/>
+                            <constraint firstItem="6Ri-H1-WDm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="qYx-tG-Exz"/>
+                            <constraint firstAttribute="trailing" secondItem="6Ri-H1-WDm" secondAttribute="trailing" id="vki-mm-LQv"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="KgZ-lq-FaR" secondAttribute="bottom" id="zgF-JQ-t1d"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="gridView" destination="9cz-Du-6LL" id="DXz-31-i05"/>
+                        <outlet property="resetButton" destination="tBJ-Ma-cjw" id="JaX-A6-2mG"/>
+                        <outlet property="startButton" destination="WrX-fg-wvv" id="ZBJ-bl-Lgz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+</document>
